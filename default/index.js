@@ -1,5 +1,5 @@
 const package_name = process.env.npm_package_name;
-const babelrc = package_name === 'eslint-config-xs' ? './.babelrc' : 'node_modules/eslint-config-xs/.babelrc';
+const babelrc = package_name === 'eslint-config-xs' ? './.babelrc' : 'node_modules/eslint-config-xs/default/.babelrc';
 
 module.exports = {
   env: {
