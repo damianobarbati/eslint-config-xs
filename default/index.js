@@ -1,3 +1,6 @@
+const package_name = process.env.npm_package_name;
+const babelrc = package_name === 'eslint-config-xs' ? './.babelrc' : 'node_modules/eslint-config-xs/.babelrc';
+
 module.exports = {
   env: {
     browser: true,
@@ -11,6 +14,9 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
+    },
+    babelOptions: {
+      configFile: babelrc,
     },
   },
   plugins: ['prettier', 'import', 'react', 'react-hooks', 'jest'],
