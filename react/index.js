@@ -1,5 +1,8 @@
+const fs = require('fs');
+
 const package_name = process.env.npm_package_name;
 const babelrc = package_name === 'eslint-config-xs' ? './.babelrc' : 'node_modules/eslint-config-xs/react/.babelrc';
+const babelOptions = JSON.parse(fs.readFileSync(babelrc, 'utf8'));
 
 module.exports = {
   env: {
@@ -15,9 +18,8 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    babelOptions: {
-      configFile: babelrc,
-    },
+    requireConfigFile: false,
+    babelOptions,
   },
   plugins: ['prettier', 'import', 'react', 'react-hooks', 'jest'],
   extends: ['eslint:recommended', 'prettier', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:jest/recommended'],
