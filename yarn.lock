@@ -577,6 +577,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
+"@babel/plugin-syntax-import-assertions@^7.16.5":
+  version "7.16.5"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-import-assertions/-/plugin-syntax-import-assertions-7.16.5.tgz#abe8015bc9e48e2841b6a4e16f7137e228c024fc"
+  integrity sha512-xv5twB+ViJRju/XXO2p1RJJ2oDytV3faJwRCxP/4og3scU3/NmoKrYZFYtkGKtHPUzl2fcsI/4ZIpYsiQvc/xQ==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.16.5"
+
 "@babel/plugin-syntax-json-strings@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-json-strings/-/plugin-syntax-json-strings-7.8.3.tgz#01ca21b668cd8218c9e640cb6dd88c5412b2c96a"

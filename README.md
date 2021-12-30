@@ -27,10 +27,17 @@ Create a `.eslintrc` file with the following content for a Nodejs project:
 }
 ```
 
+Create a `.babelrc` file with the following content for a Nodejs project:
+```json
+{
+  "extends": "eslint-config-xs"
+}
+```
+
 Nota bene: you can either use
-- `"extends": ["eslint-config-xs/node"]` for a Node codebase
-- `"extends": ["eslint-config-xs/react"]` for a React codebase
-- `"extends": ["eslint-config-xs"]` for a both Node and React codebase
+- `"eslint-config-xs/node"` for a Node codebase
+- `"eslint-config-xs/react"` for a React codebase
+- `"eslint-config-xs"` for a both Node and React codebase
 
 Lint and fix:
 ```sh
