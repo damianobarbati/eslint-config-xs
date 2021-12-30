@@ -27,10 +27,11 @@ Create a `.eslintrc` file with the following content for a Nodejs project:
 }
 ```
 
-Create a `.babelrc` file with the following content for a Nodejs project:
+To extend default `.babelrc` with custom rules, create a `.babelrc` file with the following content for a Nodejs project:
 ```json
 {
-  "extends": "eslint-config-xs"
+  "extends": "eslint-config-xs",
+  "...my other rules..": ["..."]
 }
 ```
 
