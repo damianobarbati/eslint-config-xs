@@ -1,0 +1,38 @@
+{
+  "name": "eslint-config-xs",
+  "version": "1.0.0",
+  "description": "ESLint rules for JavaScript projects",
+  "author": "Damiano Barbati (https://github.com/damianobarbati)",
+  "repository": "https://github.com/damianobarbati/eslint-config-xs",
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "default/index.js",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "javascript",
+    "react",
+    "eslintconfig"
+  ],
+  "scripts": {
+    "test": "yarn test:default && yarn test:node && yarn test:react",
+    "test:default": "cd default && node *.spec.js",
+    "test:node": "cd node && node *.spec.js",
+    "test:react": "cd react && node *.spec.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1"
+  }
+}
