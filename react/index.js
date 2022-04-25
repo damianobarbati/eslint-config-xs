@@ -34,8 +34,7 @@ module.exports = {
       },
     ],
     'import/order': 'error',
-    'import/extensions': ['error', 'ignorePackages'],
-    'prettier-plugin-tailwindcss': ['error'],
+    'import/extensions': ['error', 'ignorePackages']
   },
   settings: {
     react: {
