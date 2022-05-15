@@ -1,1 +1,3 @@
-const foo: string = 123;
+const fn = () => 'value';
+
+fn.then(console.log);
