@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const package_name = process.env.npm_package_name;
-const babelrc = package_name === 'eslint-config-xs' ? './.babelrc' : 'node_modules/eslint-config-xs/react/.babelrc';
+const babelrc = package_name === 'eslint-config-xs' ? './.babelrc' : 'node_modules/eslint-config-xs/node/.babelrc';
 const babelOptions = JSON.parse(fs.readFileSync(babelrc, 'utf8'));
 
 module.exports = {
