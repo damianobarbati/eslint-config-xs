@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xs",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "ESLint rules for JavaScript projects",
   "author": "Damiano Barbati (https://github.com/damianobarbati)",
   "repository": "https://github.com/damianobarbati/eslint-config-xs",
