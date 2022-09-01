@@ -48,7 +48,7 @@ module.exports = {
       },
     ],
     'import/order': 'error',
-    'import/extensions': ['error', 'ignorePackages']
+    'import/extensions': ['error', 'ignorePackages', { '': 'never' }]
   },
   settings: {
     jest: {
