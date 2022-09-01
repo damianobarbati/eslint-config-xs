@@ -21,8 +21,8 @@ module.exports = {
     requireConfigFile: false,
     babelOptions,
   },
-  plugins: ['prettier', 'import', 'jest'],
-  extends: ['eslint:recommended', 'prettier', 'plugin:jest/recommended'],
+  plugins: ['prettier', 'import', 'jest', 'node'],
+  extends: ['eslint:recommended', 'prettier', 'plugin:jest/recommended', 'plugin:node/recommended'],
   rules: {
     'no-console': 'off',
     'max-lines-per-function': ['error', 200],

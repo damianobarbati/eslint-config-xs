@@ -28,15 +28,14 @@ module.exports = {
     tsconfigRootDir: process.cwd(),
     createDefaultProgram: true
   },
-  plugins: ['@typescript-eslint', 'prettier', 'import', 'jest', 'node'],
+  plugins: ['@typescript-eslint', 'prettier', 'import', 'jest'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     'prettier',
-    'plugin:jest/recommended',
-    'plugin:node/recommended'
+    'plugin:jest/recommended'
   ],
   rules: {
     'no-console': 'off',
