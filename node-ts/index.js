@@ -48,7 +48,8 @@ module.exports = {
       },
     ],
     'import/order': 'error',
-    'import/extensions': ['error', 'ignorePackages', { '': 'never' }]
+    'import/extensions': ['error', 'ignorePackages', { '': 'never' }],
+    '@typescript-eslint/ban-ts-comment': 'off'
   },
   settings: {
     jest: {
