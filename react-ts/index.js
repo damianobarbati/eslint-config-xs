@@ -32,7 +32,7 @@ module.exports = {
     },
     requireConfigFile: false,
   },
-  plugins: ['@typescript-eslint', 'prettier', 'import', 'react', 'react-hooks', 'jest'],
+  plugins: ['@typescript-eslint', 'prettier', 'import', 'react', 'react-hooks', 'jest', 'testing-library'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -57,6 +57,16 @@ module.exports = {
     'import/extensions': ['error', 'ignorePackages', { '': 'never' }],
     '@typescript-eslint/ban-ts-comment': 'off'
   },
+  overrides: [
+    // Only uses Testing Library lint rules in test files
+    {
+      files: [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      extends: ["plugin:testing-library/react"]
+    }
+  ],
   settings: {
     react: {
       version: 'detect',
