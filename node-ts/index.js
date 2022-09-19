@@ -48,7 +48,17 @@ module.exports = {
       },
     ],
     'import/order': 'error',
-    'import/extensions': ['error', 'ignorePackages', { '': 'never' }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     '@typescript-eslint/ban-ts-comment': 'off'
   },
   settings: {
