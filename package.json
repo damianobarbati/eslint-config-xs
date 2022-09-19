@@ -16,31 +16,32 @@
     "eslintconfig"
   ],
   "scripts": {
-    "test": "yarn test:default && yarn test:node && yarn test:node-ts && yarn test:react",
+    "test": "yarn test:default && yarn test:node && yarn test:node-ts && yarn test:react && yarn test:react-ts",
     "test:default": "cd default && node *.spec.js",
     "test:node": "cd node && node *.spec.js",
     "test:node-ts": "cd node-ts && node *.spec.js",
-    "test:react": "cd react && node *.spec.js"
+    "test:react": "cd react && node *.spec.js",
+    "test:react-ts": "cd react-ts && node *.spec.js"
   },
   "dependencies": {
-    "@babel/core": "^7.19.0",
-    "@babel/eslint-parser": "^7.18.9",
+    "@babel/core": "^7.19.1",
+    "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-syntax-import-assertions": "^7.18.6",
-    "@babel/preset-env": "^7.19.0",
+    "@babel/preset-env": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
-    "@typescript-eslint/parser": "^5.36.2",
-    "eslint": "^8.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^27.0.2",
+    "eslint-plugin-jest": "^27.0.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.7",
+    "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.3"
   }
 }
