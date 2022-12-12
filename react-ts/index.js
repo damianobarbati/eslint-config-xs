@@ -35,9 +35,9 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'import', 'react', 'react-hooks', 'jest', 'testing-library'],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
     'plugin:jest/recommended',
     'plugin:react/recommended',

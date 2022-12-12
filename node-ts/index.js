@@ -31,9 +31,9 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'import', 'jest'],
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
     'plugin:jest/recommended'
   ],
