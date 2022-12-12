@@ -25,7 +25,6 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:jest/recommended'],
   rules: {
     'no-console': 'off',
-    'max-lines-per-function': ['error', 200],
     'prettier/prettier': [
       'error',
       {

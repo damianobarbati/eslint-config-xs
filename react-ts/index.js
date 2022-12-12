@@ -45,7 +45,6 @@ module.exports = {
   ],
   rules: {
     'no-console': 'off',
-    'max-lines-per-function': ['error', 200],
     'prettier/prettier': [
       'error',
       {
