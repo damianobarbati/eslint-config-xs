@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xs",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "ESLint and Prettier configuration for NodeJS or ReactJS projects, either Javascript or Typescript based",
   "author": "Damiano Barbati (https://github.com/damianobarbati)",
   "repository": "https://github.com/damianobarbati/eslint-config-xs",
