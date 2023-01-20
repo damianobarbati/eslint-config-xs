@@ -1,6 +1,6 @@
 # ESLint config xs
 
-This package provides an opinionated ESLint configuration for Javascript and Typescript codebases, either NodeJS or ReactJS based.  
+This package provides an opinionated ESLint and Prettier configuration for NodeJS or ReactJS projects, either Javascript or Typescript based.
 
 ## Rules
 
@@ -24,17 +24,19 @@ Create a `.eslintrc`:
 }
 ```
 
-You can use:
-- `"eslint-config-xs"` for a NodeJS and ReactJS based codebase
-- `"eslint-config-xs/node"` for a NodeJS based codebase
-- `"eslint-config-xs/node-ts"` for a NodeJS + Typescript based codebase
-- `"eslint-config-xs/react"` for a ReactJS based codebase
-- `"eslint-config-xs/react-ts"` for a ReactJS + Typescript based codebase
+You can extend:
+- `"eslint-config-xs"` for a NodeJS + ReactJS + JavaScript codebase
+- `"eslint-config-xs/node"` for a NodeJS + JavaScript codebase
+- `"eslint-config-xs/node-ts"` for a NodeJS + Typescript codebase
+- `"eslint-config-xs/react"` for a ReactJS + Javascript codebase
+- `"eslint-config-xs/react-ts"` for a ReactJS + Typescript codebase
 
-Extend if needed:
+You can extend both `eslint-config-xs/react-ts` and `eslint-config-xs/node-ts` for a NodeJS + ReactJS + Typescript codebase.  
+
+Extend as needed in your `.eslintrc`:
 ```json
 {
-  "extends": "eslint-config-xs",
+  "extends": ["eslint-config-xs"],
   "...my other rules..": ["..."]
 }
 ```
