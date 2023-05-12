@@ -1,13 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
-const tsconfig_path = path.resolve('./tsconfig.json');
-
+// look for tsconfig.json
+const ts_config_path = path.resolve('./tsconfig.json');
 try {
-  fs.accessSync(tsconfig_path)
+  fs.accessSync(ts_config_path)
 } catch {
   console.error('No tsconfig.json was found in your project, using "eslint-config-xs" default one.')
   process.exit(1);
+}
+
+// look for tailwind.config.js
+let tw_config_path = null;
+
+for (const ext of ['js', 'cjs', 'mjs']) {
+  try {
+    const tw_config_path_ext = path.resolve(`./tailwind.config.${ext}`);
+    fs.accessSync(tw_config_path_ext);
+    tw_config_path = tw_config_path_ext;
+    break;
+  } catch {
+    continue;
+  }
 }
 
 module.exports = {
@@ -20,7 +34,7 @@ module.exports = {
       "jsx": true
     },
     // ts requirements
-    project: tsconfig_path,
+    project: ts_config_path,
     tsconfigRootDir: process.cwd(),
     createDefaultProgram: true,
     requireConfigFile: false,
@@ -100,9 +114,10 @@ module.exports = {
       "version": "detect"
     },
     "tailwindcss": {
-      "config": "./services/web/tailwind.config.js",
+      "config": tw_config_path,
       "cssFiles": [
-        "./services/web/src/**/*.css"
+        "**/*.css",
+        "!node_modules/**"
       ]
     }
   }
