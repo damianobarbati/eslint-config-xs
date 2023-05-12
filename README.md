@@ -1,6 +1,6 @@
 # ESLint config xs
 
-This package provides an opinionated ESLint and Prettier configuration for NodeJS and/or ReactJS projects, either Javascript and/or Typescript based.  
+This package provides an opinionated ESLint and Prettier configuration for NodeJS and/or ReactJS (and possibly Tailwind) projects, either Javascript and/or Typescript based.  
 
 ## Rules
 

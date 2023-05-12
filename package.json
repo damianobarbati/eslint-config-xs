@@ -15,7 +15,8 @@
     "javascript",
     "typescript",
     "react",
-    "node"
+    "node",
+    "tailwind"
   ],
   "scripts": {
     "test": "vitest run ./src"
