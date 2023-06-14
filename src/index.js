@@ -82,6 +82,9 @@ module.exports = {
     ],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/consistent-type-assertions": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error", { "prefer": "type-imports" }
+    ],
     "@typescript-eslint/no-unused-vars": [
       "warn", {"ignoreRestSiblings": true, "argsIgnorePattern": "^_"}
     ],
