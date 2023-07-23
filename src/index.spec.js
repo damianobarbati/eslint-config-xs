@@ -38,9 +38,10 @@ describe('eslint-config-xs', () => {
     const [result] = await eslint.lintFiles('./src/test-files/react-ts.tsx');
     const rules = result.messages.map(m => m.ruleId);
 
-    expect(rules.length).toEqual(6);
+    expect(rules.length).toEqual(7);
     expect(rules.includes('prettier/prettier')).toEqual(true);
     expect(rules.includes('@typescript-eslint/consistent-type-imports')).toEqual(true);
+    expect(rules.includes('@typescript-eslint/consistent-type-definitions')).toEqual(true);
     expect(rules.includes('@typescript-eslint/no-unused-vars')).toEqual(true);
     expect(rules.includes('@typescript-eslint/no-unsafe-return')).toEqual(true);
     expect(rules.includes('simple-import-sort/imports')).toEqual(true);

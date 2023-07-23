@@ -6,8 +6,8 @@ const ts_config_path = path.resolve('./tsconfig.json');
 try {
   fs.accessSync(ts_config_path)
 } catch {
-  console.error('No tsconfig.json was found in your project, using "eslint-config-xs" default one.')
-  process.exit(1);
+  console.warn('No tsconfig.json was found in your project.')
+  process.exit(1)
 }
 
 // look for tailwind.config.js
@@ -38,7 +38,6 @@ module.exports = {
     tsconfigRootDir: process.cwd(),
     createDefaultProgram: true,
     requireConfigFile: false,
-
   },
   "env": {
     "browser": true,
@@ -56,9 +55,10 @@ module.exports = {
   ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic",
     "prettier",
-    'plugin:react/recommended',
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended"
   ],
