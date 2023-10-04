@@ -10,6 +10,13 @@ The following rules are explicitly applied on top of the base configuration expo
 - `"singleQuote": true`: for improved readability
 - `"printWidth": 120`: for improved readability, assuming a professional developer uses >= 21" display
 
+You should provide in the root of your project:
+- `.prettierrc` (not mandatory)
+- `tsconfig.json` (mandatory)
+- `tailwind.config.(js|cjs|mjs)` (not mandatory)
+
+ovveride prettier configuration
+
 ## Usage
 
 Install:

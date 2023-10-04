@@ -1,12 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
+// look for prettier.config.js
+const prettier_config_path = path.resolve('./.prettierrc');
+let prettierConfig;
+
+try {
+  fs.accessSync(prettier_config_path)
+  prettierConfig = JSON.parse(fs.readFileSync(prettier_config_path, 'utf8'));
+} catch {
+  console.warn('No ".prettierrc" was found in your project.');
+  prettierConfig = {
+    "singleQuote": true,
+    "printWidth": 120
+  };
+}
+
 // look for tsconfig.json
 const ts_config_path = path.resolve('./tsconfig.json');
 try {
   fs.accessSync(ts_config_path)
 } catch {
-  console.warn('No tsconfig.json was found in your project.')
+  console.warn('No "tsconfig.json" was found in your project.')
   process.exit(1)
 }
 
@@ -73,13 +88,7 @@ module.exports = {
   ],
   "rules": {
     "no-console": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "printWidth": 120
-      }
-    ],
+    "prettier/prettier": ["error", prettierConfig],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/consistent-type-assertions": "off",
     "@typescript-eslint/consistent-type-imports": [
