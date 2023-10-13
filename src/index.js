@@ -25,17 +25,18 @@ try {
   process.exit(1)
 }
 
-// look for tailwind.config.js
-let tw_config_path = null;
-
-for (const ext of ['js', 'cjs', 'mjs']) {
-  try {
-    const tw_config_path_ext = path.resolve(`./tailwind.config.${ext}`);
-    fs.accessSync(tw_config_path_ext);
-    tw_config_path = tw_config_path_ext;
-    break;
-  } catch {
-    continue;
+// look for tailwind.config.js if not provided with the ESLINT_XS_TW env
+let tw_config_path = process.env.ESLINT_XS_TW;
+if (!tw_config_path) {
+  for (const ext of ['js', 'cjs', 'mjs']) {
+    try {
+      const tw_config_path_ext = path.resolve(`./tailwind.config.${ext}`);
+      fs.accessSync(tw_config_path_ext);
+      tw_config_path = tw_config_path_ext;
+      break;
+    } catch {
+      continue;
+    }
   }
 }
 

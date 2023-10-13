@@ -15,7 +15,10 @@ You should provide in the root of your project:
 - `tsconfig.json` (mandatory)
 - `tailwind.config.(js|cjs|mjs)` (not mandatory)
 
-ovveride prettier configuration
+If your tailwind config is not in the root of the project (eg: you are in a monorepo with `pnpm`) then provide the tailwind config path explictly to `eslint-config-xs` with an env named `ESLINT_XS_TW`:
+```sh
+ESLINT_XS_TW=packages/webapp/tailwind.config.ts pnpm eslint ./packages
+```
 
 ## Usage
 
