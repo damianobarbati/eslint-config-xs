@@ -1,21 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// look for prettier.config.js
-const prettier_config_path = path.resolve('./.prettierrc');
-let prettierConfig;
-
-try {
-  fs.accessSync(prettier_config_path)
-  prettierConfig = JSON.parse(fs.readFileSync(prettier_config_path, 'utf8'));
-} catch {
-  console.warn('No ".prettierrc" was found in your project.');
-  prettierConfig = {
-    "singleQuote": true,
-    "printWidth": 120
-  };
-}
-
 // look for tsconfig.json
 const ts_config_path = path.resolve('./tsconfig.json');
 try {
@@ -40,7 +25,26 @@ if (!tw_config_path) {
   }
 }
 
-module.exports = {
+const classNamesAttributeFunctions = ["classnames", "clsx", "ctl", "cx", "cva"];
+
+// look for prettier.config.js
+const prettier_config_path = path.resolve('./.prettierrc');
+const prettierConfig = {
+  singleQuote: true,
+  printWidth: 120,
+  tailwindConfig: tw_config_path || undefined,
+  tailwindFunctions: classNamesAttributeFunctions
+};
+
+try {
+  fs.accessSync(prettier_config_path)
+  const userPrettierConfig = JSON.parse(fs.readFileSync(prettier_config_path, 'utf8'));
+  Object.assign(prettierConfig, userPrettierConfig)
+} catch {
+  console.warn('No ".prettierrc" was found in your project, using eslint-config-xs package default one.');
+}
+
+const config = {
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -127,11 +131,17 @@ module.exports = {
       "version": "detect"
     },
     "tailwindcss": {
+      "callees": classNamesAttributeFunctions,
       "config": tw_config_path,
       "cssFiles": [
         "**/*.css",
+        "./services/webapp/src/style.css",
         "!node_modules/**"
       ]
     }
   }
 }
+
+if (process.env.ESLINT_XS_DEBUG) console.log(JSON.stringify(config, null, 2));
+
+module.exports = config;
