@@ -135,7 +135,6 @@ const config = {
       "config": tw_config_path,
       "cssFiles": [
         "**/*.css",
-        "./services/webapp/src/style.css",
         "!node_modules/**"
       ]
     }
