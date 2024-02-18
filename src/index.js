@@ -124,7 +124,9 @@ const config = {
       }
     ],
     "simple-import-sort/exports": "error",
-    "tailwindcss/no-custom-classname": "error"
+    "tailwindcss/no-custom-classname": ["error", {
+      "config": tw_config_path
+    }]
   },
   "settings": {
     "react": {
